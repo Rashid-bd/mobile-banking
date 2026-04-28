@@ -9,7 +9,20 @@
     <!-- Tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    
+  <body class="flex flex-col justify-center items-center bg-[#F4F5F7] min-h-screen">
+    <div class="h-[100px] w-full max-w-[260px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center mx-auto mb-4">
+      <img src="./assets/Group.png" alt="" />
+    </div>
+    <div class="">
+      <fieldset class="fieldset bg-white border-base-300 rounded-2xl w-[320px] border p-4">
+        <label class="mt-2">Mobile Number</label>
+        <input type="tel" class="input border-none rounded-3xl bg-[#F4F5F7]" placeholder="Enter your number" />
+
+        <label class="">4 Digit Pin</label>
+        <input type="password" maxlength="4" class="input border-none rounded-3xl bg-[#F4F5F7]" placeholder="Enter 4 Digit Pin" />
+
+        <button class="btn w-full border-none rounded-3xl text-white bg-[#0874F2] mt-4">Login</button>
+      </fieldset>
+    </div>
   </body>
 </html>
