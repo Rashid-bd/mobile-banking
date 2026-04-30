@@ -15,7 +15,13 @@
     </div>
     <form class="w-full max-w-[320px] bg-white border-base-300 rounded-2xl border p-6">
       <label for="mobile-number" class="text-sm font-medium mb-1 block">Mobile Number</label>
-      <input type="tel" maxlength="11" id="mobile-number" class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter your number" />
+      <input
+        type="tel"
+        maxlength="11"
+        id="mobile-number"
+        class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter your number"
+      />
 
       <label for="pin-number" class="text-sm font-medium mb-1 block">4 Digit Pin</label>
       <input
@@ -26,7 +32,15 @@
         placeholder="••••"
       />
 
-      <button type="button" id="login-btn" class="btn w-full text-sm border-none rounded-3xl text-white bg-[#0874F2] mt-3 hover:bg-blue-700 transition-all duration-300 ease-in-out">Login</button>
+      <p id="error-message" class="text-red-500 text-sm mb-2 hidden">Invalid input</p>
+
+      <button
+        type="button"
+        id="login-btn"
+        class="btn w-full text-sm border-none rounded-3xl text-white bg-[#0874F2] mt-3 hover:bg-blue-700 transition-all duration-300 ease-in-out"
+      >
+        Login
+      </button>
     </form>
 
     <!-- js scripts -->
