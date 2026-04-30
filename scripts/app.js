@@ -1,19 +1,21 @@
 // login button functionality
 
-document.getElementById("login-btn").addEventListener("click", function(event){
+document.getElementById("login-btn").addEventListener("click", function (event) {
   event.preventDefault();
-  const mobileNumber = 12345678910;
-  const pinNumber = 1234;
+  const validMobileNumber = "12345678910";
+  const validPin = "1234";
 
-  const mobileNumberValue = document.getElementById("mobile-number").value;
-  const mobileNumberValueConverted = parseInt(mobileNumberValue);
-  const pinNumberValue = document.getElementById("pin-number").value;
-  const pinNumberValueConverted = parseInt(pinNumberValue);
+  const mobileNumber = document.getElementById("mobile-number").value;
+  const pinNumber = document.getElementById("pin-number").value;
 
-  if(mobileNumberValueConverted === mobileNumber && pinNumberValueConverted === pinNumber){
-    window.location.href="./home.html";
+  if (!mobileNumber || !pinNumber) {
+    alert("Please fill all fields");
+    return;
   }
-  else{
+
+  if (mobileNumber === validMobileNumber && pinNumber === validPin) {
+    window.location.href = "./home.html";
+  } else {
     alert("invalid credential");
   }
-})
+});
