@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/ffaa6afa04.js" crossorigin="anonymous"></script>
   </head>
   <body class="bg-[#F4F5F7] min-h-screen">
-    <div class="bg-white">
+    <div class="bg-white rounded-b-2xl mb-3">
       <!-- header -->
       <div class="border-b-2 border-gray-200">
         <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
@@ -41,31 +41,88 @@
 
         <!-- cards -->
         <div class="grid grid-cols-3 gap-4">
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Add Money</p>
           </div>
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Cashout</p>
           </div>
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/money1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Transfer Money</p>
           </div>
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/bonus1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Get Bonus</p>
           </div>
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/purse1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Pay Bill</p>
           </div>
-          <div class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4">
+          <div
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          >
             <img src="./assets/transaction1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Transactions</p>
           </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- latest payments -->
+    <div class="max-w-md mx-auto px-4 py-4">
+      <div class="flex justify-between mb-3">
+        <h3 class="text-sm font-bold">Latest Payments</h3>
+        <p class="text-sm text-gray-500">view all</p>
+      </div>
+      <div>
+        <div class="flex justify-between items-center bg-white rounded-lg shadow-sm px-4 py-3 mb-3">
+          <div class="flex items-center gap-4">
+            <div class="bg-[#F4F5F7] p-2 rounded-full">
+              <img src="./assets/wallet1.png" class="w-6 h-6" alt="" />
+            </div>
+            <div>
+              <p class="text-sm font-medium">Electricity Bill</p>
+              <span class="text-xs text-gray-500">Today 01:44 AM</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white rounded-lg shadow-sm px-4 py-3 mb-3">
+          <div class="flex items-center gap-4">
+            <div class="bg-[#F4F5F7] p-2 rounded-full">
+              <img src="./assets/wallet1.png" class="w-6 h-6" alt="" />
+            </div>
+            <div>
+              <p class="text-sm font-medium">Bank Deposit</p>
+              <span class="text-xs text-gray-500">Today 01:44 AM</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+        <div class="flex justify-between items-center bg-white rounded-lg shadow-sm px-4 py-3 mb-3">
+          <div class="flex items-center gap-4">
+            <div class="bg-[#F4F5F7] p-2 rounded-full">
+              <img src="./assets/wallet1.png" class="w-6 h-6" alt="" />
+            </div>
+            <div>
+              <p class="text-sm font-medium">Mobile Recharge</p>
+              <span class="text-xs text-gray-500">Today 01:44 AM</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
       </div>
     </div>
