@@ -18,7 +18,7 @@ document.getElementById("login-btn").addEventListener("click", function (event) 
 
   if (mobileNumber === validMobileNumber && pinNumber === validPin) {
     errorMessage.classList.add("hidden");
-    window.location.href = "./home.html";
+    window.location.href = "./home-page.html";
   } else {
     errorMessage.innerText = "Invalid mobile number or PIN";
     errorMessage.classList.remove("hidden");
