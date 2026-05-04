@@ -41,8 +41,9 @@
 
         <!-- cards -->
         <div class="grid grid-cols-3 gap-4">
-          <div id="add-money"
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+          <div
+            id="add-money"
+            class="cursor-pointer bg-blue-50 border-blue-400 transition duration-300 flex flex-col justify-center items-center border rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Add Money</p>
@@ -78,6 +79,66 @@
             <p class="text-xs text-gray-600">Transactions</p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="max-w-md mx-auto px-4 py-4">
+      <h3 class="text--[24px] font-bold mb-2">Add Money</h3>
+      <div>
+        <form class="w-full max-w-md mx-auto bg-white border-base-300 rounded-2xl border p-4">
+          <label for="bank-name" class="text-sm font-medium mb-1 block">Select A Bank</label>
+          <div class="relative mb-3">
+            <select
+              id="bank-name"
+              class="w-full text-sm border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              <option value="">Select a bank</option>
+              <option value="dbbl">DBBL</option>
+              <option value="brac">BRAC Bank</option>
+              <option value="islami">Islami Bank</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+          </div>
+
+          <label for="account-number" class="text-sm font-medium mb-1 block">Account Number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="account-number"
+            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter 11 digit account number"
+          />
+
+          <label for="add-amount" class="text-sm font-medium mb-1 block">Amount to Add</label>
+          <input
+            type="number"
+            id="add-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to deposit"
+          />
+
+          <label for="pin-number" class="text-sm font-medium mb-1 block">PIN Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="pin-number"
+            class="input w-full border-none rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="add-money-btn"
+            class="w-full bg-[#0874F2] text-white py-3 rounded-3xl font-semibold hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Add Money
+          </button>
+        </form>
       </div>
     </div>
   </body>
