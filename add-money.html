@@ -102,12 +102,12 @@
           <div class="relative mb-4">
             <select
               id="bank-name"
-              class="w-full text-sm border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+              class="w-full text-[16px] text-gray-600 border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
-              <option value="">Select a bank</option>
-              <option value="dbbl">DBBL</option>
-              <option value="brac">BRAC Bank</option>
-              <option value="islami">Islami Bank</option>
+              <option value="" class="text-lg text-black font-medium">Select bank</option>
+              <option value="dbbl" class="text-black">DBBL</option>
+              <option value="brac" class="text-black">BRAC Bank</option>
+              <option value="islami" class="text-black">Islami Bank</option>
             </select>
             <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
           </div>
@@ -118,7 +118,7 @@
             inputmode="numeric"
             maxlength="11"
             id="account-number"
-            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter 11 digit account number"
           />
 
@@ -129,7 +129,7 @@
             min="0"
             step="1"
             inputmode="numeric"
-            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter amount to deposit"
           />
 
@@ -140,7 +140,7 @@
             inputmode="numeric"
             pattern="[0-9]*"
             id="pin-number"
-            class="input w-full border-none rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full border-none text-[16px] rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="••••"
           />
 
