@@ -4,22 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payoo Mobile Banking</title>
-    <!-- daisy ui cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <!-- Tailwind cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/ffaa6afa04.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body class="bg-[#F4F5F7] min-h-screen">
+  <body class="bg-[#F4F5F7] min-h-screen outfit">
     <div class="bg-white rounded-b-2xl mb-3">
       <!-- header -->
       <div class="border-b-2 border-gray-200">
-        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="max-w-md mx-auto px-2 py-3 flex justify-between items-center">
           <div class="flex items-center">
             <img src="./assets/Group.png" alt="" class="w-12 h-12 object-contain mr-2" />
             <div>
-              <h2 class="font-bold">$<span>45000</span></h2>
+              <h2 class="text-lg font-bold">$<span>45000</span></h2>
               <p class="text-gray-500 text-sm">Available Balance</p>
             </div>
           </div>
@@ -33,60 +44,62 @@
       </div>
 
       <!-- welcome payoo -->
-      <div class="max-w-md mx-auto px-4 py-4">
+      <div class="max-w-md mx-auto px-2 py-4">
         <div class="py-4">
-          <h1 class="text-xl font-bold mb-2">🔥 Welcome to Payooo!</h1>
-          <p class="text-sm text-gray-500">Enjoy easy and secure financial services with low cashout charges and smooth transactions anytime.</p>
+          <h1 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h1>
+          <p class="text-[16px] tracking-wide leading-relaxed text-gray-500">
+            Enjoy easy and secure financial services with low cashout charges and smooth transactions anytime.
+          </p>
         </div>
 
         <!-- cards -->
-        <div class="grid grid-cols-3 gap-4">
+        <div class="grid grid-cols-3 gap-3">
           <div
             id="add-money"
-            class="cursor-pointer bg-blue-50 border-blue-400 transition duration-300 flex flex-col justify-center items-center border rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer bg-[#0874F2]/5 border-2 border-blue-400 transition duration-300 flex flex-col justify-center items-center rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Add Money</p>
+            <p class="text-sm font-bold text-[#0874F2]">Add Money</p>
           </div>
           <div
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Cashout</p>
+            <p class="text-sm text-[#080808]/70">Cashout</p>
           </div>
           <div
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/money1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Transfer Money</p>
+            <p class="text-sm text-[#080808]/70">Transfer Money</p>
           </div>
           <div
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/bonus1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Get Bonus</p>
+            <p class="text-sm text-[#080808]/70">Get Bonus</p>
           </div>
           <div
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/purse1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Pay Bill</p>
+            <p class="text-sm text-[#080808]/70">Pay Bill</p>
           </div>
           <div
-            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
           >
             <img src="./assets/transaction1.png" class="w-8 h-8 mb-2" alt="" />
-            <p class="text-xs text-gray-600">Transactions</p>
+            <p class="text-sm text-[#080808]/70">Transactions</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="max-w-md mx-auto px-4 py-4">
-      <h3 class="text--[24px] font-bold mb-2">Add Money</h3>
+    <div class="max-w-md mx-auto px-2 py-4">
+      <h3 class="text-lg font-semibold mb-2">Add Money</h3>
       <div>
-        <form class="w-full max-w-md mx-auto bg-white border-base-300 rounded-2xl border p-4">
-          <label for="bank-name" class="text-sm font-medium mb-1 block">Select A Bank</label>
-          <div class="relative mb-3">
+        <form class="w-full max-w-md mx-auto bg-white border-base-300 rounded-2xl border px-6 py-8">
+          <label for="bank-name" class="text-[16px] font-medium mb-2 block">Select A Bank</label>
+          <div class="relative mb-4">
             <select
               id="bank-name"
               class="w-full text-sm border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -99,35 +112,35 @@
             <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
           </div>
 
-          <label for="account-number" class="text-sm font-medium mb-1 block">Account Number</label>
+          <label for="account-number" class="text-[16px] font-medium mb-2 block">Account Number</label>
           <input
             type="text"
             inputmode="numeric"
             maxlength="11"
             id="account-number"
-            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter 11 digit account number"
           />
 
-          <label for="add-amount" class="text-sm font-medium mb-1 block">Amount to Add</label>
+          <label for="add-amount" class="text-[16px] font-medium mb-2 block">Amount to Add</label>
           <input
             type="number"
             id="add-amount"
             min="0"
             step="1"
             inputmode="numeric"
-            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="Enter amount to deposit"
           />
 
-          <label for="pin-number" class="text-sm font-medium mb-1 block">PIN Number</label>
+          <label for="pin-number" class="text-[16px] font-medium mb-2 block">PIN Number</label>
           <input
             type="password"
             maxlength="4"
             inputmode="numeric"
             pattern="[0-9]*"
             id="pin-number"
-            class="input w-full border-none rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            class="input w-full border-none rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
             placeholder="••••"
           />
 
