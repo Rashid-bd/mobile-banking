@@ -19,7 +19,7 @@
           <div class="flex items-center">
             <img src="./assets/Group.png" alt="" class="w-12 h-12 object-contain mr-2" />
             <div>
-              <h2 class="font-bold">$<span>45000</span></h2>
+              <h2 class="font-bold">$<span id="main-balance">45000</span></h2>
               <p class="text-gray-500 text-sm">Available Balance</p>
             </div>
           </div>
@@ -49,30 +49,35 @@
             <p class="text-xs text-gray-600">Add Money</p>
           </div>
           <div
+            id="cashout"
             class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Cashout</p>
           </div>
           <div
+            id="transfer-money"
             class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/money1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Transfer Money</p>
           </div>
           <div
+            id="get-bonus"
             class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/bonus1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Get Bonus</p>
           </div>
           <div
+            id="pay-bill"
             class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/purse1.png" class="w-8 h-8 mb-2" alt="" />
             <p class="text-xs text-gray-600">Pay Bill</p>
           </div>
           <div
+            id="transactions"
             class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-lg text-center shadow-sm p-4"
           >
             <img src="./assets/transaction1.png" class="w-8 h-8 mb-2" alt="" />
@@ -128,5 +133,11 @@
       </div>
     </div>
     <script src="./scripts/add-money.js"></script>
+    <script src="./scripts/cashout.js"></script>
+    <script src="./scripts/transfer-money.js"></script>
+    <script src="./scripts/get-bonus.js"></script>
+    <script src="./scripts/pay-bill.js"></script>
+    <script src="./scripts/transactions.js"></script>
+
   </body>
 </html>
