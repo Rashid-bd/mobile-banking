@@ -35,6 +35,7 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
 
   if (pin !== "1234") {
     alert("Wrong PIN");
+    document.getElementById("pin-number").value = "";
     return;
   }
 
