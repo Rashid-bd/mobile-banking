@@ -49,7 +49,7 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
 
   balance.innerText = newBalance;
 
-  alert("Money added succesfully");
+  alert("Money added successfully");
 
   document.getElementById("add-money-form").reset();
 });
