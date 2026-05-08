@@ -1,11 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>welcome to transfer money page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo Mobile Banking</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ffaa6afa04.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="bg-[#F4F5F7] min-h-screen outfit">
+    <div class="bg-white rounded-b-2xl mb-3">
+      <!-- header -->
+      <div class="border-b-2 border-gray-200">
+        <div class="max-w-md mx-auto px-2 py-3 flex justify-between items-center">
+          <div class="flex items-center">
+            <img src="./assets/Group.png" alt="" class="w-12 h-12 object-contain mr-2" />
+            <div>
+              <h2 class="text-lg font-bold">$<span id="main-balance">45000</span></h2>
+              <p class="text-gray-500 text-sm">Available Balance</p>
+            </div>
+          </div>
+          <div>
+            <button class="btn text-gray-500 border border-gray-200 rounded-lg hover:bg-red-500 hover:text-white transition duration-300">
+              <i class="fa-solid fa-arrow-right-from-bracket rotate-180 mr-1"></i>
+              Log Out
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- welcome payoo -->
+      <div class="max-w-md mx-auto px-2 py-4">
+        <div class="py-4">
+          <h1 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h1>
+          <p class="text-[16px] tracking-wide leading-relaxed text-gray-500">
+            Enjoy easy and secure financial services with low cashout charges and smooth transactions anytime.
+          </p>
+        </div>
+
+        <!-- cards -->
+        <div class="grid grid-cols-3 gap-3">
+          <div
+            id="add-money"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Add Money</p>
+          </div>
+          <div
+            id="cashout"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Cashout</p>
+          </div>
+          <div
+            id="transfer-money"
+            class="cursor-pointer bg-[#0874F2]/5 border-2 border-blue-400 transition duration-300 flex flex-col justify-center items-center rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/money1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm font-bold text-[#0874F2]">Transfer Money</p>
+          </div>
+          <div
+            id="get-bonus"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/bonus1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Get Bonus</p>
+          </div>
+          <div
+            id="pay-bill"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/purse1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Pay Bill</p>
+          </div>
+          <div
+            id="transactions"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/transaction1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Transactions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transfer Money -->
+    <div class="max-w-md mx-auto px-2 py-4">
+      <h3 class="text-lg font-semibold mb-2">Transfer Money</h3>
+      <div>
+        <form id="transfer-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+
+          <label for="user-account" class="text-[16px] font-medium mb-2 block">User Account</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="user-account"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter 11 digit user account number"
+          />
+
+          <label for="transfer-amount" class="text-[16px] font-medium mb-2 block">Amount to Transfer</label>
+          <input
+            type="number"
+            id="send-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to transfer"
+          />
+
+          <label for="pin-number" class="text-[16px] font-medium mb-2 block">Pin Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="pin-number"
+            class="input w-full border-none text-2xl rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="send-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Send Now
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./scripts/add-money.js"></script>
+    <script src="./scripts/cashout.js"></script>
+    <script src="./scripts/transfer-money.js"></script>
+    <script src="./scripts/get-bonus.js"></script>
+    <script src="./scripts/pay-bill.js"></script>
+    <script src="./scripts/transactions.js"></script>
+  </body>
 </html>
