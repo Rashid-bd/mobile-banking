@@ -16,6 +16,7 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (even
   if(!bank){
     alert("Please choose a bank");
     this.removeAttributeNS;
+    return;
   }
   if(isNaN(accountNumber) || accountNumber.length !== 11){
     alert("Please enter a valid account number");
