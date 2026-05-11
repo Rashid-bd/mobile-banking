@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo Mobile Banking</title>
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ffaa6afa04.js" crossorigin="anonymous"></script>
+
+    <!-- Tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="bg-[#F4F5F7] min-h-screen outfit">
+    <div class="bg-white rounded-b-2xl mb-3">
+      <!-- header -->
+      <div class="border-b-2 border-gray-200">
+        <div class="max-w-md mx-auto px-2 py-3 flex justify-between items-center">
+          <div class="flex items-center">
+            <img src="./assets/Group.png" alt="" class="w-12 h-12 object-contain mr-2" />
+            <div>
+              <h2 class="text-lg font-bold">$<span id="main-balance">45000</span></h2>
+              <p class="text-gray-500 text-sm">Available Balance</p>
+            </div>
+          </div>
+          <div>
+            <button class="btn text-gray-500 border border-gray-200 rounded-lg hover:bg-red-500 hover:text-white transition duration-300">
+              <i class="fa-solid fa-arrow-right-from-bracket rotate-180 mr-1"></i>
+              Log Out
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- welcome payoo -->
+      <div class="max-w-md mx-auto px-2 py-4">
+        <div class="py-4">
+          <h1 class="text-2xl font-bold mb-2">🔥 Welcome to Payooo!</h1>
+          <p class="text-[16px] tracking-wide leading-relaxed text-gray-500">
+            Enjoy easy and secure financial services with low cashout charges and smooth transactions anytime.
+          </p>
+        </div>
+
+        <!-- cards -->
+        <div class="grid grid-cols-3 gap-3">
+          <!-- Add Money -->
+          <div
+            id="add-money"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/wallet1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm font-bold text-[#0874F2]">Add Money</p>
+          </div>
+
+          <!-- Cash Out -->
+          <div
+            id="cashout"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/send1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Cashout</p>
+          </div>
+
+          <!-- Send Money -->
+          <div
+            id="send-money"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/money1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Send Money</p>
+          </div>
+
+          <!-- Get Bonus -->
+          <div
+            id="get-bonus"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/bonus1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Get Bonus</p>
+          </div>
+
+          <!-- Pay Bill -->
+          <div
+            id="pay-bill"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/purse1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Pay Bill</p>
+          </div>
+
+          <!-- Transactions -->
+          <div
+            id="transactions"
+            class="cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4"
+          >
+            <img src="./assets/transaction1.png" class="w-8 h-8 mb-2" alt="" />
+            <p class="text-sm text-[#080808]/70">Transactions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Money Container-->
+    <div id="add-money-container" class="input-form max-w-md mx-auto px-2 py-4" style="display: none">
+      <h3 class="text-lg font-semibold mb-2">Add Money</h3>
+      <div>
+        <form id="add-money-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+          <label for="bank-name" class="text-[16px] font-medium mb-2 block">Select A Bank</label>
+          <div class="relative mb-4">
+            <select
+              id="bank-name"
+              class="w-full text-[16px] text-gray-600 border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              <option value="" disabled selected class="text-lg text-black font-medium">Select bank</option>
+              <option value="dbbl" class="text-black">DBBL</option>
+              <option value="brac" class="text-black">BRAC Bank</option>
+              <option value="islami" class="text-black">Islami Bank</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+          </div>
+
+          <label for="account-number" class="text-[16px] font-medium mb-2 block">Account Number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="account-number"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter 11 digit account number"
+          />
+
+          <label for="add-amount" class="text-[16px] font-medium mb-2 block">Amount to Add</label>
+          <input
+            type="number"
+            id="add-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to deposit"
+          />
+
+          <label for="pin-number" class="text-[16px] font-medium mb-2 block">Pin Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="pin-number"
+            class="input w-full border-none text-2xl rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="add-money-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Add Money
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cash Out Container-->
+    <div id="cash-out-container" class="input-form max-w-md mx-auto px-2 py-4" style="display: none">
+      <h3 class="text-lg font-semibold mb-2">Cash Out</h3>
+      <div>
+        <form id="cashout-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+          <label for="agent-number" class="text-[16px] font-medium mb-2 block">Agent Number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="agent-number"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter 11 digit agent number"
+          />
+
+          <label for="cashout-amount" class="text-[16px] font-medium mb-2 block">Amount to Cashout</label>
+          <input
+            type="number"
+            id="cashout-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to withdraw"
+          />
+
+          <label for="cashout-pin" class="text-[16px] font-medium mb-2 block">Pin Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="cashout-pin"
+            class="input w-full border-none text-2xl rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="cashout-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Send Money Container -->
+    <div id="send-money-container" class="input-form max-w-md mx-auto px-2 py-4" style="display: none">
+      <h3 class="text-lg font-semibold mb-2">Send Money</h3>
+      <div>
+        <form id="send-money-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+          <label for="user-account" class="text-[16px] font-medium mb-2 block">User Account</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="user-account"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter 11 digit user account number"
+          />
+
+          <label for="send-amount" class="text-[16px] font-medium mb-2 block">Amount to Send</label>
+          <input
+            type="number"
+            id="send-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to send"
+          />
+
+          <label for="send-pin" class="text-[16px] font-medium mb-2 block">Pin Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="send-pin"
+            class="input w-full border-none text-2xl rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="send-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Send Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Get Bonus Container -->
+    <div id="get-bonus-container" class="input-form max-w-md mx-auto px-2 py-4" style="display: none">
+      <h3 class="text-lg font-semibold mb-2">Get Bonus</h3>
+      <div>
+        <form id="bonus-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+          <label for="coupon" class="text-[16px] font-medium mb-2 block">Enter Bonus Coupon</label>
+          <input
+            type="text"
+            id="coupon"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter your coupon here"
+          />
+          <button
+            type="submit"
+            id="get-bonus-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Pay Bill Container -->
+    <div id="pay-bill-container" class="input-form max-w-md mx-auto px-2 py-4" style="display: none">
+      <h3 class="text-lg font-semibold mb-2">Pay Bill</h3>
+      <div>
+        <form id="pay-bill-form" class="w-full max-w-md mx-auto bg-white border-base-300 rounded-3xl border px-6 py-8">
+          <label for="pay-bank" class="text-[16px] font-medium mb-2 block">Select A Bank</label>
+          <div class="relative mb-4">
+            <select
+              id="pay-bank"
+              class="w-full text-[16px] text-gray-600 border-none rounded-3xl bg-[#F4F5F7] px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+            >
+              <option value="" disabled selected class="text-lg text-black font-medium">Select bank</option>
+              <option value="bkash" class="text-black">Bkash</option>
+              <option value="nagad" class="text-black">Nagad</option>
+              <option value="rocket" class="text-black">Rocket</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+          </div>
+
+          <label for="biller-account" class="text-[16px] font-medium mb-2 block">Biller Account Number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            maxlength="11"
+            id="biller-account"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter biller account number"
+          />
+
+          <label for="pay-amount" class="text-[16px] font-medium mb-2 block">Amount to Pay</label>
+          <input
+            type="number"
+            id="pay-amount"
+            min="0"
+            step="1"
+            inputmode="numeric"
+            class="input w-full px-4 py-3 text-[16px] border-none rounded-3xl bg-[#F4F5F7] mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="Enter amount to pay"
+          />
+
+          <label for="pay-pin" class="text-[16px] font-medium mb-2 block">Pin Number</label>
+          <input
+            type="password"
+            maxlength="4"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            id="pay-pin"
+            class="input w-full border-none text-2xl rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-5 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            placeholder="••••"
+          />
+
+          <button
+            type="submit"
+            id="pay-bill-btn"
+            class="w-full bg-[#0874F2] text-xl text-white py-3 rounded-3xl font-semibold cursor-pointer hover:bg-blue-700 transition duration-300 mt-2"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
