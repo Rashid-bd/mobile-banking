@@ -1,56 +1,73 @@
-// ------------ add money input field show -----------
+// ------------- UI Toggle function for Active card -------------
 
-document.getElementById("add-money").addEventListener("click", function (event) {
-  event.preventDefault();
+function setActive(id) {
+  document.querySelectorAll(".card-btn").forEach((card) => {
+    // class reset to default card
+    card.className =
+      "card-btn cursor-pointer hover:border-blue-400 hover:bg-blue-50 hover:scale-105 hover:shadow-md transition duration-300 flex flex-col justify-center items-center border border-gray-200 rounded-xl text-center shadow-sm p-4 text-sm text-[#080808]/70";
+  });
+
+  // class set to active card
+  document.getElementById(id).className =
+    "card-btn cursor-auto scale-105 flex flex-col justify-center items-center bg-[#0874F2]/15 border-2 border-blue-400 rounded-xl text-center shadow-sm p-4 text-sm font-bold text-[#0874F2]";
+}
+
+// ------------ toggle function to show input field------------
+
+function toggleInput(id) {
   const forms = document.getElementsByClassName("input-form");
   for (const form of forms) {
     form.style.display = "none";
   }
-  document.getElementById("add-money-container").style.display = "block";
+  document.getElementById(id).style.display = "block";
+}
+
+// ------------ add money input field show -----------
+
+document.getElementById("add-money").addEventListener("click", function (event) {
+  event.preventDefault();
+  setActive("add-money");
+  toggleInput("add-money-container");
 });
 
 // ------------- cashout input field show --------------
 
 document.getElementById("cashout").addEventListener("click", function (event) {
   event.preventDefault();
-  const forms = document.getElementsByClassName("input-form");
-  for (const form of forms) {
-    form.style.display = "none";
-  }
-  document.getElementById("cash-out-container").style.display = "block";
+  setActive("cashout");
+  toggleInput("cash-out-container");
 });
 
 // ------------- send money input field show --------------
 
 document.getElementById("send-money").addEventListener("click", function (event) {
   event.preventDefault();
-  const forms = document.getElementsByClassName("input-form");
-  for (const form of forms) {
-    form.style.display = "none";
-  }
-  document.getElementById("send-money-container").style.display = "block";
+  setActive("send-money");
+  toggleInput("send-money-container");
 });
 
 // ------------- get bonus input field show --------------
 
 document.getElementById("get-bonus").addEventListener("click", function (event) {
   event.preventDefault();
-  const forms = document.getElementsByClassName("input-form");
-  for (const form of forms) {
-    form.style.display = "none";
-  }
-  document.getElementById("get-bonus-container").style.display = "block";
+  setActive("get-bonus");
+  toggleInput("get-bonus-container");
 });
 
 // ------------- pay bill input field show --------------
 
 document.getElementById("pay-bill").addEventListener("click", function (event) {
   event.preventDefault();
-  const forms = document.getElementsByClassName("input-form");
-  for (const form of forms) {
-    form.style.display = "none";
-  }
-  document.getElementById("pay-bill-container").style.display = "block";
+  setActive("pay-bill");
+  toggleInput("pay-bill-container");
+});
+
+// ------------- transaction input field show --------------
+
+document.getElementById("transactions").addEventListener("click", function (event) {
+  event.preventDefault();
+  setActive("transactions");
+  toggleInput("transaction-container");
 });
 
 // ---------- reusable function to get value from input field----------
@@ -217,25 +234,25 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (eve
   document.getElementById("bonus-form").reset();
 });
 
-// ~~~~~~~~~~~~~~~ Pay Bill Input Field Function~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~ Pay Bill Input Field Function ~~~~~~~~~~~~~~
 
 document.getElementById("pay-bill-btn").addEventListener("click", function (event) {
   event.preventDefault();
 
   const balance = getTextNumber("main-balance");
-//   console.log(balance);
+  //   console.log(balance);
 
   const bank = getValue("pay-bank");
-    // console.log(bank);
+  // console.log(bank);
 
   const accountNumber = getValue("biller-account");
-    // console.log(accountNumber);
+  // console.log(accountNumber);
 
   const amount = getValueNumber("pay-amount");
-    console.log(amount);
+  console.log(amount);
 
   const pin = getValue("pay-pin");
-    // console.log(pin);
+  // console.log(pin);
 
   if (!bank) {
     alert("Please choose a bank");
