@@ -14,20 +14,24 @@
       <img src="./assets/Group.png" alt="" />
     </div>
     <form class="w-full max-w-[320px] bg-white border-base-300 rounded-2xl border p-6">
-      <label for="mobile-number" class="text-sm font-medium mb-1 block">Mobile Number</label>
+      <label for="login-number" class="text-sm font-medium mb-1 block">Mobile Number</label>
       <input
         type="tel"
+        inputmode="numeric"
+        pattern="[0-9]{11}"
         maxlength="11"
-        id="mobile-number"
+        id="login-number"
         class="input w-full text-sm border-none rounded-3xl bg-[#F4F5F7] mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
         placeholder="Enter your number"
       />
 
-      <label for="pin-number" class="text-sm font-medium mb-1 block">4 Digit Pin</label>
+      <label for="login-pin" class="text-sm font-medium mb-1 block">4 Digit Pin</label>
       <input
         type="password"
         maxlength="4"
-        id="pin-number"
+        inputmode="numeric"
+        pattern="[0-9]{4}"
+        id="login-pin"
         class="input w-full border-none rounded-3xl bg-[#F4F5F7] text-center tracking-widest mb-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
         placeholder="••••"
       />
@@ -35,7 +39,7 @@
       <p id="error-message" class="text-red-500 text-sm mb-2 hidden">Invalid input</p>
 
       <button
-        type="button"
+        type="submit"
         id="login-btn"
         class="btn w-full text-sm border-none rounded-3xl text-white bg-[#0874F2] mt-3 hover:bg-blue-700 transition-all duration-300 ease-in-out"
       >
@@ -43,7 +47,6 @@
       </button>
     </form>
     <!-- js scripts -->
-    <script src="./scripts/test.js"></script>
-    <!-- <script src="./scripts/home-page.js"></script> -->
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

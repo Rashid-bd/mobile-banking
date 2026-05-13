@@ -1,4 +1,4 @@
-
+// ========================================================================
 // ------------- UI Toggle function for Active card -------------
 
 function setActive(id) {
@@ -13,6 +13,7 @@ function setActive(id) {
     "card-btn cursor-auto scale-105 flex flex-col justify-center items-center bg-[#0874F2]/15 border-2 border-blue-400 rounded-xl text-center shadow-sm p-4 text-sm font-bold text-[#0874F2]";
 }
 
+// ========================================================================
 // ------------ toggle function to show input field------------
 
 function toggleInput(id) {
@@ -71,6 +72,7 @@ document.getElementById("transactions").addEventListener("click", function (even
   toggleInput("transaction-container");
 });
 
+// =========================================================================
 // ---------- reusable function to get value from input field----------
 
 function getValue(id) {
@@ -80,9 +82,6 @@ function getValueNumber(id) {
   const val = document.getElementById(id).value;
   return parseInt(val);
 }
-function getInnerText(id) {
-  return document.getElementById(id).innerText;
-}
 function getTextNumber(id) {
   const innerText = document.getElementById(id).innerText;
   return parseInt(innerText);
@@ -91,8 +90,10 @@ function setBalance(value) {
   const balance = document.getElementById("main-balance");
   balance.innerText = value;
 }
+// ==========================================================================
 
-// ~~~~~~~~~~~~~~~ Add Money Input Field Function~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~ Add Money Input Field Function~~~~~~~~~~~~~~~~~~
 
 document.getElementById("add-money-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -141,7 +142,8 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
   addTransaction("Bank Deposit", amount, "./assets/wallet1.png", "add");
 });
 
-// ~~~~~~~~~~~~~~~~CashOut Input Field Function~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~CashOut Input Field Function~~~~~~~~~~~~~~~~~~~
 
 document.getElementById("cashout-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -179,7 +181,8 @@ document.getElementById("cashout-btn").addEventListener("click", function (event
   addTransaction("Cashout", amount, "./assets/send1.png", "cashout");
 });
 
-// ~~~~~~~~~~~~~~~ Send Money Input Field Function~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~ Send Money Input Field Function~~~~~~~~~~~~~~~~~
 
 document.getElementById("send-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -217,7 +220,8 @@ document.getElementById("send-btn").addEventListener("click", function (event) {
   addTransaction("Send Money", amount, "./assets/money1.png", "send");
 });
 
-// ~~~~~~~~~~~~~~~ Get Bonus Input Field Function~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~ Get Bonus Input Field Function~~~~~~~~~~~~~~~~~~~~~~
 
 document.getElementById("get-bonus-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -238,7 +242,8 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (eve
   addTransaction("Get Bonus", 100, "./assets/bonus1.png", "add");
 });
 
-// ~~~~~~~~~~~~~~~ Pay Bill Input Field Function ~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~ Pay Bill Input Field Function ~~~~~~~~~~~~~~~~~~~
 
 document.getElementById("pay-bill-btn").addEventListener("click", function (event) {
   event.preventDefault();
@@ -285,7 +290,9 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (even
   addTransaction("Pay Bill", amount, "./assets/purse1.png", "pay");
 });
 
-// ~~~~~~~~~~~~~~~ Transaction Section's Function ~~~~~~~~~~~~~~
+// =============================================================================
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~~~~~~~~~~~~~~~~~ Transaction Section's Function ~~~~~~~~~~~~~~~~~~~
 
 // ------------ create array to show transaction ------------
 const transactionData = [];
@@ -330,3 +337,4 @@ function showTransactions() {
     transactionContainer.prepend(div);
   }
 }
+// ===============================================================================
