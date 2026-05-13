@@ -4,6 +4,14 @@ A demo mobile banking web app built with HTML, Tailwind CSS, and JavaScript.
 ## 🌐 Live Demo
 👉 [Click here to view the live project](https://rashid-bd.github.io/mobile-banking/)
 
+## 🔑 Demo Login
+- Mobile Number: 12345678910
+- PIN: 1234
+
+## ⚠️ Note
+- For other transactions, you can use any 11-digit number.
+- Use PIN: 1234 for all operations.
+
 ## 🚀 Features
 - Add money (bank deposit)
 - Cash out money
@@ -32,4 +40,4 @@ This project was built to practice JavaScript DOM manipulation and explore moder
 <img width="649" height="927" alt="image" src="https://github.com/user-attachments/assets/dac4c3a8-250b-4f59-b192-7983220743a2" />
 
 ## 🌐 Live Demo
-👉 [Click here to view the live project](https://rashid-bd.github.io/mobile-banking/)
+👉 https://rashid-bd.github.io/mobile-banking/
