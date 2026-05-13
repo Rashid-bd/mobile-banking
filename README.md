@@ -1,6 +1,8 @@
 # 💰 Mobile Banking
-
 A demo mobile banking web app built with HTML, Tailwind CSS, and JavaScript.
+
+## 🌐 Live Demo
+👉 [Click here to view the live project](https://rashid-bd.github.io/mobile-banking/)
 
 ## 🚀 Features
 - Add money (bank deposit)
@@ -29,7 +31,5 @@ This project was built to practice JavaScript DOM manipulation and explore moder
 <img width="649" height="927" alt="image" src="https://github.com/user-attachments/assets/b63c767f-5037-4ecb-88cb-193834e36acf" />
 <img width="649" height="927" alt="image" src="https://github.com/user-attachments/assets/dac4c3a8-250b-4f59-b192-7983220743a2" />
 
-
 ## 🌐 Live Demo
-
-_(Live link coming soon)_
+👉 [Click here to view the live project](https://rashid-bd.github.io/mobile-banking/)
