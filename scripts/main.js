@@ -138,7 +138,7 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
   alert("Money added successfully");
 
   document.getElementById("add-money-form").reset();
-  addTransaction("Bank Deposit", amount, "./assets/wallet1.png")
+  addTransaction("Bank Deposit", amount, "./assets/wallet1.png", "add");
 });
 
 // ~~~~~~~~~~~~~~~~CashOut Input Field Function~~~~~~~~~~~~~~~~~
@@ -176,7 +176,7 @@ document.getElementById("cashout-btn").addEventListener("click", function (event
 
   alert("Cash Out Successful");
   document.getElementById("cashout-form").reset();
-  addTransaction("Cashout", amount, "./assets/send1.png")
+  addTransaction("Cashout", amount, "./assets/send1.png", "cashout");
 });
 
 // ~~~~~~~~~~~~~~~ Send Money Input Field Function~~~~~~~~~~~~~~
@@ -214,7 +214,7 @@ document.getElementById("send-btn").addEventListener("click", function (event) {
   setBalance(newBalance);
   alert("Send Money Successful");
   document.getElementById("send-money-form").reset();
-  addTransaction("Send Money", amount, "./assets/money1.png")
+  addTransaction("Send Money", amount, "./assets/money1.png", "send");
 });
 
 // ~~~~~~~~~~~~~~~ Get Bonus Input Field Function~~~~~~~~~~~~~~
@@ -235,7 +235,7 @@ document.getElementById("get-bonus-btn").addEventListener("click", function (eve
     alert("Invalid coupon");
   }
   document.getElementById("bonus-form").reset();
-  addTransaction("Get Bonus", 100, "./assets/bonus1.png")
+  addTransaction("Get Bonus", 100, "./assets/bonus1.png", "add");
 });
 
 // ~~~~~~~~~~~~~~~ Pay Bill Input Field Function ~~~~~~~~~~~~~~
@@ -282,7 +282,7 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (even
   setBalance(newBalance);
   alert("Bill Paid Successfully");
   document.getElementById("pay-bill-form").reset();
-  addTransaction("Pay Bill", amount, "./assets/purse1.png")
+  addTransaction("Pay Bill", amount, "./assets/purse1.png", "pay");
 });
 
 // ~~~~~~~~~~~~~~~ Transaction Section's Function ~~~~~~~~~~~~~~
@@ -290,11 +290,12 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (even
 // ------------ create array to show transaction ------------
 const transactionData = [];
 
-function addTransaction(title, amount, icon) {
+function addTransaction(title, amount, icon, type) {
   const data = {
     title: title,
     amount: amount,
     icon: icon,
+    type: type,
     date: new Date().toLocaleString(),
   };
   transactionData.push(data);
@@ -309,7 +310,7 @@ function showTransactions() {
     div.className = "flex justify-between items-center bg-white rounded-lg shadow-sm px-4 py-3 mb-3";
 
     div.innerHTML = `
-    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4">
         <div class="bg-[#F4F5F7] p-2 rounded-full">
           <img src="${item.icon}" class="w-6 h-6" />
         </div>
@@ -320,8 +321,9 @@ function showTransactions() {
       </div>
 
       <div>
-        <span class="text-sm font-semibold text-gray-700">
-          TK ${item.amount}
+        <span class="text-sm font-semibold ${item.type === "add" ? "text-green-600" : "text-red-500"}">
+        ${item.type === "add" ? "+" : "-"}
+        TK ${item.amount}
         </span>
       </div>
     `;
