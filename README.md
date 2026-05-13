@@ -1,30 +1,34 @@
 # 💰 Mobile Banking
 
-A mobile banking simulation web app built using JavaScript DOM manipulation, Tailwind CSS, and DaisyUI.
+A demo mobile banking web app built with HTML, Tailwind CSS, and JavaScript.
 
 ## 🚀 Features
-- Deposit money
-- Withdraw money
+- Add money (bank deposit)
+- Cash out money
+- Send money to another user
+- Pay bills
+- Apply bonus coupon
 - Real-time balance update
-- Interactive UI
+- Transaction history with + / - tracking
+- Interactive card-based UI
 
 ## 🛠️ Technologies Used
 - HTML
-- CSS
 - Tailwind CSS
-- DaisyUI
 - JavaScript (DOM)
 
 ## 📌 Project Purpose
-This project was built to practice JavaScript DOM manipulation and explore modern UI design using Tailwind CSS and DaisyUI.
+This project was built to practice JavaScript DOM manipulation and explore modern UI design using Tailwind CSS.
+
 ## 🔮 Future Improvements
-- Add transaction history
-- Add user authentication
-- Backend integration
+- Store data using LocalStorage or database
+- Implement secure user authentication
+- Connect with backend (API integration)
   
 ## 📷 Screenshot
+<img width="649" height="927" alt="image" src="https://github.com/user-attachments/assets/b63c767f-5037-4ecb-88cb-193834e36acf" />
+<img width="649" height="927" alt="image" src="https://github.com/user-attachments/assets/dac4c3a8-250b-4f59-b192-7983220743a2" />
 
-_Add screenshot here_
 
 ## 🌐 Live Demo
 
